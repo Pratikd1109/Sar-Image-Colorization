@@ -13,6 +13,7 @@ from io import BytesIO
 import cv2
 import numpy as np
 
+
 # Flask app initialization
 app = Flask(__name__)
 
@@ -97,7 +98,8 @@ class Generator(nn.Module):
 # Initialize the Generator
 # CHANGE 3: Ensure model is explicitly moved to CPU after loading
 G1 = Generator(input_nc=1, output_nc=3).to(device)
-G1.load_state_dict(torch.load(r"weights\best_G1.pth", map_location=device))
+import os
+G1.load_state_dict(torch.load(os.path.join("weights", "best_G1.pth"), map_location=device))
 G1.to(device) # Double check to ensure it stays on CPU
 G1.eval()
 
