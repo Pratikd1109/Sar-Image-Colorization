@@ -1,5 +1,7 @@
-Flask
-tensorflow
+flask
+werkzeug
+pillow
+torch
+torchvision
+opencv-python
 numpy
-Pillow
-gunicorn
